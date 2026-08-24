@@ -120,7 +120,7 @@ export default function HeroSection() {
             <span
               className={`block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight transition-all duration-500 ease-out ${isVisible && showHeading ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
             >
-              NEET PG 2026
+              NEET PG
             </span>
             <span
               className={`block mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-white/90 transition-all duration-500 ease-out ${isVisible && showHeading ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
