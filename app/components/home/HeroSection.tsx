@@ -76,6 +76,14 @@ export default function HeroSection() {
 
   const [activeOverview, setActiveOverview] = useState(0);
   const [overviewPaused, setOverviewPaused] = useState(false);
+  const [headingIn, setHeadingIn] = useState(false);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    setHeadingIn(false);
+    const t = setTimeout(() => setHeadingIn(true), 700);
+    return () => clearTimeout(t);
+  }, [activeOverview, isVisible]);
 
   useEffect(() => {
     if (overviewPaused) return;
@@ -107,17 +115,25 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-20 w-full flex-grow flex flex-col justify-center pb-12 pt-28">
 
         {/* Title above Carousel */}
-        <div className={`transition-all duration-1000 delay-200 mb-6 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+        <div className="mb-6">
           {/* <span className="text-xs uppercase tracking-[0.2em] text-[#c0a062] font-bold block mb-1">Counselling & Pathways</span> */}
           <h2 className="font-[var(--font-outfit)] text-white tracking-wide">
-            <span className="block text-3xl sm:text-4xl md:text-5xl font-bold">
+            <span
+              className={`block text-3xl sm:text-4xl md:text-5xl font-bold transition-all duration-500 ease-out ${isVisible && headingIn ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
+            >
               NEET PG 2026
             </span>
-            <span className="block mt-2 text-lg sm:text-xl md:text-2xl font-semibold text-white/90">
+            <span
+              className={`block mt-2 text-lg sm:text-xl md:text-2xl font-semibold text-white/90 transition-all duration-500 ease-out ${isVisible && headingIn ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
+              style={{ transitionDelay: isVisible && headingIn ? "120ms" : "0ms" }}
+            >
               All India <span className="text-[#c0a062] px-0.5">|</span> DNB{" "}
               <span className="text-[#c0a062] px-0.5">|</span> NBE-DIPLOMA
             </span>
-            <span className="block text-lg sm:text-xl md:text-2xl font-semibold text-white/90">
+            <span
+              className={`block text-lg sm:text-xl md:text-2xl font-semibold text-white/90 transition-all duration-500 ease-out ${isVisible && headingIn ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
+              style={{ transitionDelay: isVisible && headingIn ? "240ms" : "0ms" }}
+            >
               DEEMED MGMT. QUOTA <span className="text-[#c0a062] px-0.5">|</span>{" "}
               NRI QUOTA
             </span>
@@ -129,12 +145,6 @@ export default function HeroSection() {
           className={`mt-8 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
         >
-          <h3 className="font-[var(--font-outfit)] text-base sm:text-lg md:text-xl font-bold text-white tracking-wide">
-            NEET PG Counselling Overview
-          </h3>
-          <p className="text-white/60 text-xs sm:text-sm font-light mt-1 mb-4">
-            Comprehensive guidance for medical, dental &amp; PG quota admissions
-          </p>
           <div
             className="relative h-[130px] sm:h-[110px] md:h-[96px]"
             onMouseEnter={() => setOverviewPaused(true)}
