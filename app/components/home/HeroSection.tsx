@@ -76,22 +76,21 @@ export default function HeroSection() {
 
   const [activeOverview, setActiveOverview] = useState(0);
   const [overviewPaused, setOverviewPaused] = useState(false);
-  const [headingIn, setHeadingIn] = useState(false);
+  const [showHeading, setShowHeading] = useState(true);
 
   useEffect(() => {
     if (!isVisible) return;
-    setHeadingIn(false);
-    const t = setTimeout(() => setHeadingIn(true), 700);
+    const t = setTimeout(() => setShowHeading(false), 4000);
     return () => clearTimeout(t);
-  }, [activeOverview, isVisible]);
+  }, [isVisible]);
 
   useEffect(() => {
-    if (overviewPaused) return;
+    if (!isVisible || overviewPaused || showHeading) return;
     const interval = setInterval(() => {
       setActiveOverview((i) => (i + 1) % OVERVIEW_ITEMS.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [overviewPaused]);
+  }, [isVisible, overviewPaused, showHeading]);
 
   return (
     <section id="hero" className="relative min-h-screen lg:min-h-[105vh] w-full bg-[#030303] overflow-hidden flex flex-col justify-between">
@@ -114,39 +113,37 @@ export default function HeroSection() {
       {/* Main Content Area */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-20 w-full flex-grow flex flex-col justify-center pb-12 pt-28">
 
-        {/* Title above Carousel */}
-        <div className="mb-6">
+        {/* Title & Overview Carousel share the same spot */}
+        <div className="relative mb-6">
           {/* <span className="text-xs uppercase tracking-[0.2em] text-[#c0a062] font-bold block mb-1">Counselling & Pathways</span> */}
           <h2 className="font-[var(--font-outfit)] text-white tracking-wide">
             <span
-              className={`block text-3xl sm:text-4xl md:text-5xl font-bold transition-all duration-500 ease-out ${isVisible && headingIn ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
+              className={`block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight transition-all duration-500 ease-out ${isVisible && showHeading ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
             >
               NEET PG 2026
             </span>
             <span
-              className={`block mt-2 text-lg sm:text-xl md:text-2xl font-semibold text-white/90 transition-all duration-500 ease-out ${isVisible && headingIn ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
-              style={{ transitionDelay: isVisible && headingIn ? "120ms" : "0ms" }}
+              className={`block mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-white/90 transition-all duration-500 ease-out ${isVisible && showHeading ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
+              style={{ transitionDelay: isVisible && showHeading ? "120ms" : "0ms" }}
             >
               All India <span className="text-[#c0a062] px-0.5">|</span> DNB{" "}
               <span className="text-[#c0a062] px-0.5">|</span> NBE-DIPLOMA
             </span>
             <span
-              className={`block text-lg sm:text-xl md:text-2xl font-semibold text-white/90 transition-all duration-500 ease-out ${isVisible && headingIn ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
-              style={{ transitionDelay: isVisible && headingIn ? "240ms" : "0ms" }}
+              className={`block text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-white/90 transition-all duration-500 ease-out ${isVisible && showHeading ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
+              style={{ transitionDelay: isVisible && showHeading ? "240ms" : "0ms" }}
             >
               DEEMED MGMT. QUOTA <span className="text-[#c0a062] px-0.5">|</span>{" "}
               NRI QUOTA
             </span>
           </h2>
-        </div>
 
-        {/* NEET PG Counselling Overview */}
-        <div
-          className={`mt-8 transition-all duration-1000 delay-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-            }`}
-        >
+          {/* NEET PG Counselling Overview */}
           <div
-            className="relative h-[130px] sm:h-[110px] md:h-[96px]"
+            className={`absolute inset-0 flex items-center transition-all duration-700 ease-in-out ${isVisible && !showHeading ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-10 pointer-events-none"}`}
+          >
+          <div
+            className="relative h-[130px] sm:h-[140px] md:h-[150px] lg:h-[170px]"
             onMouseEnter={() => setOverviewPaused(true)}
             onMouseLeave={() => setOverviewPaused(false)}
           >
@@ -158,7 +155,7 @@ export default function HeroSection() {
                 return (
                   <div
                     key={item.title}
-                    className={`max-w-3xl transition-all duration-700 ease-in-out ${
+                    className={`w-full max-w-[1100px] transition-all duration-700 ease-in-out ${
                       isActive
                         ? "opacity-100 translate-y-0"
                         : idx === prevIdx
@@ -173,13 +170,8 @@ export default function HeroSection() {
                           : "border-white/10 hover:border-[#c0a062]/50"
                       }`}
                     >
-                      <span
-                        className={`mt-1 h-2 w-2 rounded-full flex-shrink-0 ${
-                          isRed ? "bg-[#eb2525]" : "bg-[#c0a062]"
-                        }`}
-                      />
                       <div className="text-left">
-                        <h4 className="text-white text-base md:text-lg font-bold leading-snug">
+                        <h4 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight whitespace-nowrap">
                           {item.title}
                         </h4>
                         <p className="text-white/60 text-xs sm:text-sm font-light leading-relaxed mt-1">
@@ -191,6 +183,7 @@ export default function HeroSection() {
                 );
               });
             })()}
+          </div>
           </div>
         </div>
 
