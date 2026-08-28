@@ -125,7 +125,7 @@ export default async function BranchContactPage({ params }: { params: Promise<{ 
         <Banner
           title={`${branch.city} Office`}
           description={`Direct contact information and route map for ADCB Consultancy branch in ${branch.city}, Kerala.`}
-          imageSrc="/page-banner/contact2.png"
+          imageSrc="/contact/contact5.jpg"
           imageAlt={`${branch.city} Office Banner`}
           buttonText="View Address"
           buttonHref="#details"
