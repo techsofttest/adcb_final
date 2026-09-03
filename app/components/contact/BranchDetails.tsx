@@ -10,7 +10,8 @@ interface BranchDetailsProps {
   };
 }
 
-export default function BranchDetails({ branch }: BranchDetailsProps) {
+export default function BranchDetails({ branch }: BranchDetailsProps) { 
+  
   return (
     <section id="details" className="py-12 sm:py-20 border-b border-zinc-900 bg-black text-white">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-20">
