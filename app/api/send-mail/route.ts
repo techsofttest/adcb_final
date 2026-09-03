@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-const RESEND_API_KEY = process.env.RESEND_API_KEY ?? "";
-const MAIL_FROM = process.env.RESEND_FROM ?? "ADCB Website <onboarding@resend.dev>";
+const SMTP_HOST = process.env.SMTP_HOST ?? "";
+const SMTP_PORT = Number(process.env.SMTP_PORT ?? "587");
+const SMTP_USER = process.env.SMTP_USER ?? "";
+const SMTP_PASS = process.env.SMTP_PASS ?? "";
+const SMTP_FROM = process.env.SMTP_FROM ?? SMTP_USER;
 const MAIL_TO = process.env.ENQUIRY_EMAIL ?? "admin@adcbind.com";
 
 export async function POST(req: NextRequest) {
@@ -31,22 +34,22 @@ export async function POST(req: NextRequest) {
       </table>
     `;
 
-    const resend = new Resend(RESEND_API_KEY);
+    const transporter = nodemailer.createTransport({
+      host: SMTP_HOST,
+      port: SMTP_PORT,
+      secure: SMTP_PORT === 465,
+      auth: {
+        user: SMTP_USER,
+        pass: SMTP_PASS,
+      },
+    });
 
-    const { error } = await resend.emails.send({
-      from: MAIL_FROM,
-      to: [MAIL_TO],
+    await transporter.sendMail({
+      from: SMTP_FROM,
+      to: MAIL_TO,
       subject,
       html,
     });
-
-    if (error) {
-      console.error("Resend error:", error);
-      return NextResponse.json(
-        { error: "Failed to send email", detail: String(error) },
-        { status: 500 }
-      );
-    }
 
     return NextResponse.json({ ok: true });
   } catch (error) {
