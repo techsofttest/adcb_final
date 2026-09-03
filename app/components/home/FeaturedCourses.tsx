@@ -4,8 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import API_BASE_URL from "@/lib/apiUrl";
-
 interface FeaturedCourse {
   code: string;
   title: string;
@@ -68,7 +66,7 @@ export default function FeaturedCourses() {
   useEffect(() => {
     let cancelled = false;
 
-    fetch(`${API_BASE_URL}/api/v1/courses`, { cache: "no-store" })
+    fetch(`/api/v1/courses`, { cache: "no-store" })
       .then((res) => (res.ok ? res.json() : null))
       .then((json) => {
         if (cancelled) return;

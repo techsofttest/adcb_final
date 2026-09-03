@@ -13,8 +13,6 @@ import { mdmsGuideData } from "../../md-ms/[slug]/mdmsGuideData";
 const stripHtml = (html?: string) =>
   html ? html.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, "") : null;
 
-import API_BASE_URL from "@/lib/apiUrl";
-
 const slugify = (name: string) =>
   name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 
@@ -153,7 +151,7 @@ export default function MobileMenu({
   useEffect(() => {
     let cancelled = false;
 
-    fetch(`${API_BASE_URL}/api/v1/courses`, { cache: "no-store" })
+    fetch(`/api/v1/courses`, { cache: "no-store" })
       .then((res) => (res.ok ? res.json() : null))
       .then((json) => {
         if (cancelled) return;
@@ -165,7 +163,7 @@ export default function MobileMenu({
         if (!cancelled) setApiCourses(null);
       });
 
-    fetch(`${API_BASE_URL}/api/v1/mbbs-states`, { cache: "no-store" })
+    fetch(`/api/v1/mbbs-states`, { cache: "no-store" })
       .then((res) => (res.ok ? res.json() : null))
       .then((json) => {
         if (cancelled) return;
@@ -177,7 +175,7 @@ export default function MobileMenu({
         if (!cancelled) setApiMbbsStates(null);
       });
 
-    fetch(`${API_BASE_URL}/api/v1/mdms`, { cache: "no-store" })
+    fetch(`/api/v1/mdms`, { cache: "no-store" })
       .then((res) => (res.ok ? res.json() : null))
       .then((json) => {
         if (cancelled) return;
@@ -189,7 +187,7 @@ export default function MobileMenu({
         if (!cancelled) setApiMdmsContents(null);
       });
 
-    fetch(`${API_BASE_URL}/api/v1/mds`, { cache: "no-store" })
+    fetch(`/api/v1/mds`, { cache: "no-store" })
       .then((res) => (res.ok ? res.json() : null))
       .then((json) => {
         if (cancelled) return;
