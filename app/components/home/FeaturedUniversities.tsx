@@ -4,14 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const universities = [
-  { name: "University of Oxford", country: "United Kingdom", logo: "/university/University of Oxford.png" },
-  { name: "Harvard University", country: "United States", logo: "/university/Harvard University.png" },
-  { name: "University of Cambridge", country: "United Kingdom", logo: "/university/University of Cambridge.png" },
-  { name: "Stanford University", country: "United States", logo: "/university/Stanford University.png" },
-  { name: "Massachusetts Institute of Technology", country: "United States", logo: "/university/Massachusetts Institute of Technology.png" },
-  { name: "Princeton University", country: "United States", logo: "/university/Princeton University.png" },
-  { name: "University of Toronto", country: "Canada", logo: "/university/University of Toronto.png" },
-  { name: "ETH Zurich", country: "Switzerland", logo: "/university/ETH Zurich.png" },
+  { name: "University of Oxford", country: "United Kingdom", logo: "/university/oxford.png" },
+  { name: "Harvard University", country: "United States", logo: "/university/harvard.png" },
+  { name: "University of Cambridge", country: "United Kingdom", logo: "/university/cambridge.png" },
+  { name: "Stanford University", country: "United States", logo: "/university/stanford.png" },
+  { name: "Massachusetts Institute of Technology", country: "United States", logo: "/university/mit.png" },
+  { name: "Princeton University", country: "United States", logo: "/university/princeton.png" },
+  { name: "University of Toronto", country: "Canada", logo: "/university/toronto.png" },
+  { name: "ETH Zurich", country: "Switzerland", logo: "/university/eth-zurich.png" },
 ];
 
 export default function FeaturedUniversities() {

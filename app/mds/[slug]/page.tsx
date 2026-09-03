@@ -100,7 +100,7 @@ export default async function MdsSlugPage({
     title: apiContent?.title || data.title,
     bannerTitle: apiContent?.banner_title || data.bannerTitle,
     bannerDescription: apiContent?.banner_description || data.bannerDescription,
-    bannerImage: apiContent?.banner_image || data.bannerImage,
+    bannerImage: data.bannerImage,
     overviewTitle: apiContent?.overview_title || data.overviewTitle,
     overviewContent: apiContent?.overview_content || data.overviewContent,
     middleBanner: apiContent?.middle_banner || data.middleBanner,

@@ -43,32 +43,32 @@ export default function PreFooterCTA() {
       <div className="absolute inset-y-0 right-0 w-[45%] pointer-events-none hidden lg:block z-0 opacity-20">
         <div className="relative w-full h-full">
           <img
-            src="/cta/United Kingdom.png"
+            src="/cta/united-kingdom.png"
             alt="UK Building"
             className="absolute bottom-0 right-72 h-[45%] object-contain object-bottom"
           />
           <img
-            src="/cta/Saudi Arabia.png"
+            src="/cta/saudi-arabia.png"
             alt="Saudi Building"
             className="absolute bottom-0 right-56 h-[55%] object-contain object-bottom"
           />
           <img
-            src="/cta/United Arab Emirates.png"
+            src="/cta/uae.png"
             alt="UAE Building"
             className="absolute bottom-0 right-40 h-[65%] object-contain object-bottom"
           />
           <img
-            src="/cta/image (13) 1.png"
+            src="/cta/cta-13.png"
             alt="Cta Building 1"
             className="absolute bottom-0 right-28 h-[75%] object-contain object-bottom"
           />
           <img
-            src="/cta/image (15) 1.png"
+            src="/cta/cta-15.png"
             alt="Cta Building 2"
             className="absolute bottom-0 right-14 h-[60%] object-contain object-bottom"
           />
           <img
-            src="/cta/image (14) 1.png"
+            src="/cta/cta-14.png"
             alt="Cta Building 3"
             className="absolute bottom-0 right-0 h-[45%] object-contain object-bottom"
           />

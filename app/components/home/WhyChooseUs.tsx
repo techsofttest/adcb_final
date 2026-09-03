@@ -4,25 +4,25 @@ import { useEffect, useRef, useState } from "react";
 
 const whyChooseUs = [
   {
-    image: "/why-us/Personalised Guidance.png",
+    image: "/why-us/personalised-guidance.png",
     title: "Personalised Guidance",
     description:
       "One-on-one counselling sessions tailored to your academic profile, career aspirations, and financial considerations.",
   },
   {
-    image: "/why-us/End-to-End Support.png",
+    image: "/why-us/end-to-end-support.png",
     title: "End-to-End Support",
     description:
       "From course selection to university admission, documentation, visa guidance, and post-admission placement assistance.",
   },
   {
-    image: "/why-us/International Licensing.png",
+    image: "/why-us/international-licensing.png",
     title: "International Licensing",
     description:
       "Expert guidance on DHA, DOH, MOH, ORE, ADC, NDEB, and other international licensing pathways for dental professionals.",
   },
   {
-    image: "/why-us/Transparent Process.png",
+    image: "/why-us/transparent-process.png",
     title: "Transparent Process",
     description:
       "Complete transparency in fee structures, admission timelines, and university selection with no hidden charges.",
