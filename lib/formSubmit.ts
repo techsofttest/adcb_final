@@ -1,4 +1,4 @@
-export const ENQUIRY_EMAIL = "adcbedtech@gmail.com";
+export const ENQUIRY_EMAIL = process.env.NEXT_PUBLIC_ENQUIRY_EMAIL ?? "admin@adcbind.com";
 
 function labelize(key: string): string {
   return key
@@ -11,22 +11,17 @@ export async function submitEnquiryEmail(
   subject: string,
   fields: Record<string, string>
 ): Promise<void> {
-  const payload: Record<string, string> = {
-    _subject: subject,
-    _template: "table",
-    _captcha: "false",
-  };
+  const payload: Record<string, string> = {};
   for (const [key, value] of Object.entries(fields)) {
     if (value) payload[labelize(key)] = value;
   }
 
-  const res = await fetch(`https://formsubmit.co/ajax/${ENQUIRY_EMAIL}`, {
+  const res = await fetch("/api/send-mail", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/json",
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify({ subject, fields: payload }),
   });
 
   if (!res.ok) {
