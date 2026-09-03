@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm install --include=optional",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -12,6 +11,7 @@
   "dependencies": {
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
+    "lightningcss-linux-x64-gnu": "^1.29.2",
     "next": "^16.2.12",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
