@@ -56,14 +56,21 @@ const fallbackCourses: FeaturedCourse[] = [
   },
 ];
 
-export default function FeaturedCourses() {
+interface FeaturedCoursesProps {
+  initialCourses?: FeaturedCourse[];
+}
+
+export default function FeaturedCourses({ initialCourses }: FeaturedCoursesProps) {
   const [courses, setCourses] = useState<FeaturedCourse[]>(
-    fallbackCourses.filter((course) => course.featured)
+    initialCourses && initialCourses.length > 0
+      ? initialCourses
+      : fallbackCourses.filter((course) => course.featured)
   );
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    if (initialCourses && initialCourses.length > 0) return;
     let cancelled = false;
 
     fetch(`/api/v1/courses`, { cache: "no-store" })
@@ -84,7 +91,7 @@ export default function FeaturedCourses() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [initialCourses]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

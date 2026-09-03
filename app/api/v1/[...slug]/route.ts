@@ -13,9 +13,22 @@ async function proxy(req: NextRequest, params: { slug: string[] }) {
   try {
     const headers = new Headers();
     req.headers.forEach((value, key) => {
-      if (key !== "host" && key !== "connection") {
-        headers.set(key, value);
+      const lower = key.toLowerCase();
+      if (
+        lower === "host" ||
+        lower === "connection" ||
+        lower === "accept-encoding" ||
+        lower === "referer" ||
+        lower === "origin" ||
+        lower === "sec-fetch-site" ||
+        lower === "sec-fetch-mode" ||
+        lower === "sec-fetch-dest" ||
+        lower === "content-length" ||
+        lower === "transfer-encoding"
+      ) {
+        return;
       }
+      headers.set(key, value);
     });
 
     const init: RequestInit = {
