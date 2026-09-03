@@ -104,6 +104,7 @@ export default function Footer() {
             alt="ADCB Consultancy Logo"
             width={70}
             height={70}
+            style={{ width: "auto", height: "auto" }}
             className="h-[70px] w-auto transition-opacity duration-300 hover:opacity-80"
             priority
           />
