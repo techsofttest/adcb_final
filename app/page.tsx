@@ -7,7 +7,6 @@ import PreFooterCTA from "./components/global/PreFooterCTA";
 import Footer from "./components/global/Footer";
 import WhatsAppButton from "./components/global/WhatsAppButton";
 import { buildSeoMetadata } from "@/lib/seo";
-import API_BASE_URL from "@/lib/apiUrl";
 
 export async function generateMetadata() {
   return buildSeoMetadata(
@@ -18,49 +17,7 @@ export async function generateMetadata() {
   );
 }
 
-interface ApiCourse {
-  code: string;
-  title: string;
-  description: string | null;
-  image: string | null;
-  href: string | null;
-  featured?: boolean;
-}
-
-interface FeaturedCourseProps {
-  code: string;
-  title: string;
-  description: string;
-  image: string;
-  href: string;
-  featured?: boolean;
-}
-
-async function getFeaturedCourses(): Promise<FeaturedCourseProps[]> {
-  try {
-    const res = await fetch(`${API_BASE_URL}/api/v1/courses`, {
-      cache: "no-store",
-    });
-    if (!res.ok) return [];
-    const json = await res.json();
-    if (!json || !Array.isArray(json.data)) return [];
-    return json.data
-      .filter((c: ApiCourse) => c.featured)
-      .map((c: ApiCourse) => ({
-        code: c.code,
-        title: c.title,
-        description: c.description ?? "",
-        image: c.image ?? "",
-        href: c.href ?? "#",
-        featured: c.featured,
-      })) as FeaturedCourseProps[];
-  } catch {
-    return [];
-  }
-}
-
-export default async function Home() {
-  const featuredCourses = await getFeaturedCourses();
+export default function Home() {
   return (
     <>
       <Navbar />
@@ -77,7 +34,7 @@ export default async function Home() {
             buttonText="Explore MDS in AP"
             buttonHref="#enquiry"
           />
-          <FeaturedCourses initialCourses={featuredCourses} />
+          <FeaturedCourses />
           {/* <WhyChooseUs />  */}
           <PreFooterCTA />
         </main>
