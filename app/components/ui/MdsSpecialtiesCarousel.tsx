@@ -10,15 +10,15 @@ interface SpecialtyItem {
 }
 
 const specialtiesList: SpecialtyItem[] = [
-  { slug: "conservative-dentistry", title: "Conservative Dentistry & Endodontics", image: "/mds/Conservative Dentistry & Endodontics.jpg" },
-  { slug: "orthodontics", title: "Orthodontics & Dentofacial Orthopaedics", image: "/mds/Orthodontics & Dentofacial Orthopaedics.jpg" },
-  { slug: "prosthodontics", title: "Prosthodontics & Crown and Bridge", image: "/mds/Prosthodontics & Crown and Bridge.jpg" },
-  { slug: "oral-surgery", title: "Oral & Maxillofacial Surgery (OMFS)", image: "/mds/Oral & Maxillofacial Surgery.jpg" },
-  { slug: "periodontology", title: "Periodontology", image: "/mds/Periodontology.jpg" },
-  { slug: "pediatric-dentistry", title: "Pediatric & Preventive Dentistry", image: "/mds/Pediatric & Preventive Dentistry.jpg" },
-  { slug: "oral-medicine", title: "Oral Medicine & Radiology", image: "/mds/Oral Medicine & Radiology.jpg" },
-  { slug: "oral-pathology", title: "Oral & Maxillofacial Pathology", image: "/mds/Oral Pathology.jpg" },
-  { slug: "public-health-dentistry", title: "Public Health Dentistry", image: "/mds/Public Health Dentistry.jpg" }
+  { slug: "conservative-dentistry", title: "Conservative Dentistry & Endodontics", image: "/mds/conservative-dentistry.jpg" },
+  { slug: "orthodontics", title: "Orthodontics & Dentofacial Orthopaedics", image: "/mds/orthodontics.jpg" },
+  { slug: "prosthodontics", title: "Prosthodontics & Crown and Bridge", image: "/mds/prosthodontics.jpg" },
+  { slug: "oral-surgery", title: "Oral & Maxillofacial Surgery (OMFS)", image: "/mds/oral-maxillofacial-surgery.jpg" },
+  { slug: "periodontology", title: "Periodontology", image: "/mds/periodontology.jpg" },
+  { slug: "pediatric-dentistry", title: "Pediatric & Preventive Dentistry", image: "/mds/pediatric-dentistry.jpg" },
+  { slug: "oral-medicine", title: "Oral Medicine & Radiology", image: "/mds/oral-medicine-radiology.jpg" },
+  { slug: "oral-pathology", title: "Oral & Maxillofacial Pathology", image: "/mds/oral-pathology.jpg" },
+  { slug: "public-health-dentistry", title: "Public Health Dentistry", image: "/mds/public-health-dentistry.jpg" }
 ];
 
 interface MdsSpecialtiesCarouselProps {

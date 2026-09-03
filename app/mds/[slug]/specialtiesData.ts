@@ -52,7 +52,7 @@ export const specialtiesData: Record<string, SpecialtyData> = {
     metaDescription: "Learn about Conservative Dentistry & Endodontics MDS clinical specialization, counselling options, and global licensing pathways.",
     bannerTitle: "MDS Admissions & Counselling",
     bannerDescription: "Transform your dental career. Get expert, transparent guidance for NEET MDS counselling and secure admissions in top-tier dental colleges.",
-    bannerImage: "/mds/Conservative Dentistry & Endodontics.jpg",
+    bannerImage: "/mds/conservative-dentistry.jpg",
     overviewTitle: "Conservative Dentistry & Endodontics",
     overviewContent: "Conservative Dentistry & Endodontics is one of the most sought-after clinical branches in MDS. The branch primarily focuses on restoring teeth, aesthetic restorations, smile enhancement, and advanced root canal treatments.It offers strong patient flow because restorative and endodontic procedures are required in almost every dental practice. It is a highly hands-on clinical branch with opportunities in private practice, specialty clinics, academics, and corporate dentistry.",
     middleBanner: {
@@ -171,7 +171,7 @@ export const specialtiesData: Record<string, SpecialtyData> = {
     metaDescription: "Learn about Orthodontics & Dentofacial Orthopaedics MDS specialization, counselling guidance, and global licensing pathways.",
     bannerTitle: "MDS Admissions & Counselling",
     bannerDescription: "Transform your dental career. Get expert, transparent guidance for NEET MDS counselling and secure admissions in top-tier dental colleges.",
-    bannerImage: "/mds/Orthodontics & Dentofacial Orthopaedics.jpg",
+    bannerImage: "/mds/orthodontics.jpg",
     overviewTitle: "Orthodontics & Dentofacial Orthopaedics",
     overviewContent: "Orthodontics & Dentofacial Orthopaedics is the branch which focuses on correcting malaligned teeth, managing bite-related issues, and guiding facial growth and development using various orthodontic appliances and treatment modalities. <br> <br> Orthodontics Focuses on tooth movement Commonly uses braces and aligners Can be performed at any age Corrects dental malocclusion Dentofacial Orthopedics Focuses on jaw and facial bone growth Uses growth-modification appliances Most effective during growth periods Corrects skeletal malocclusion.",
     middleBanner: {
@@ -302,7 +302,7 @@ export const specialtiesData: Record<string, SpecialtyData> = {
     metaDescription: "Learn about Prosthodontics & Crown and Bridge MDS specialization, counselling advice, and global licensing pathways.",
     bannerTitle: "MDS Admissions & Counselling",
     bannerDescription: "Transform your dental career. Get expert, transparent guidance for NEET MDS counselling and secure admissions in top-tier dental colleges.",
-    bannerImage: "/mds/Prosthodontics & Crown and Bridge.jpg",
+    bannerImage: "/mds/prosthodontics.jpg",
     overviewTitle: "Prosthodontics & Crown and Bridge",
     overviewContent: "Prosthodontics & Crown and Bridge is a specialized branch focused on the replacement and rehabilitation of missing or damaged teeth. It deals with crowns, bridges, dentures, full-mouth rehabilitation, implant-supported prostheses, and restoring both function and aesthetics.",
     middleBanner: {
@@ -436,7 +436,7 @@ export const specialtiesData: Record<string, SpecialtyData> = {
     metaDescription: "Learn about Oral & Maxillofacial Surgery (OMFS) MDS specialization, counselling advice, and global licensing pathways.",
     bannerTitle: "MDS Admissions & Counselling",
     bannerDescription: "Transform your dental career. Get expert, transparent guidance for NEET MDS counselling and secure admissions in top-tier dental colleges.",
-    bannerImage: "/mds/Oral & Maxillofacial Surgery.jpg",
+    bannerImage: "/mds/oral-maxillofacial-surgery.jpg",
     overviewTitle: "Oral & Maxillofacial Surgery (OMFS)",
     overviewContent: "OMFS goes far beyond routine tooth extractions. The specialty deals with facial trauma, jaw surgeries, impacted teeth, oral pathologies, facial infections, cysts and tumors, implant surgeries, and various reconstructive procedures involving the face and jaws.<br><br>One of the major advantages of this branch is the surgical training and operating theatre exposure you receive during MDS. It is often preferred by candidates who want a more medically oriented and procedure-driven career compared to conventional dental practice.<br><br>Oral and maxillofacial surgeons are trained to perform procedures under local anesthesia, sedation, and general anesthesia.",
     middleBanner: {
@@ -572,7 +572,7 @@ export const specialtiesData: Record<string, SpecialtyData> = {
     metaDescription: "Learn about Periodontology MDS specialization, counselling advice, and global licensing pathways.",
     bannerTitle: "MDS Admissions & Counselling",
     bannerDescription: "Transform your dental career. Get expert, transparent guidance for NEET MDS counselling and secure admissions in top-tier dental colleges.",
-    bannerImage: "/mds/Periodontology.jpg",
+    bannerImage: "/mds/periodontology.jpg",
     overviewTitle: "Periodontology",
     overviewContent: "Periodontology is a clinical specialty focused on the prevention, diagnosis, and treatment of diseases affecting the gums and supporting structures of the teeth. It also plays a major role in implant dentistry, which has become one of the fastest-growing areas in dental practice.<br><br>Many candidates choose Periodontology because it provides surgical exposure without being as extensive as OMFS, while also offering strong opportunities in implantology. With increasing awareness about oral health and dental implants, the scope of the branch continues to grow.",
     middleBanner: {
@@ -692,7 +692,7 @@ export const specialtiesData: Record<string, SpecialtyData> = {
     metaDescription: "Learn about Pediatric & Preventive Dentistry MDS specialization, counselling details, and global licensing pathways.",
     bannerTitle: "MDS Admissions & Counselling",
     bannerDescription: "Transform your dental career. Get expert, transparent guidance for NEET MDS counselling and secure admissions in top-tier dental colleges.",
-    bannerImage: "/mds/Pediatric & Preventive Dentistry.jpg",
+    bannerImage: "/mds/pediatric-dentistry.jpg",
     overviewTitle: "Pediatric & Preventive Dentistry",
     overviewContent: "Pediatric & Preventive Dentistry is a specialty dedicated to the oral health care of infants, children, adolescents, and patients with special healthcare needs. The branch focuses not only on treating dental problems but also on preventing them at an early stage.<br><br>The specialty combines clinical dentistry with child psychology and preventive healthcare.",
     middleBanner: {
@@ -814,7 +814,7 @@ export const specialtiesData: Record<string, SpecialtyData> = {
     metaDescription: "Learn about Oral Medicine & Radiology MDS specialization, counselling guidance, and global licensing pathways.",
     bannerTitle: "MDS Admissions & Counselling",
     bannerDescription: "Transform your dental career. Get expert, transparent guidance for NEET MDS counselling and secure admissions in top-tier dental colleges.",
-    bannerImage: "/mds/Oral Medicine & Radiology.jpg",
+    bannerImage: "/mds/oral-medicine-radiology.jpg",
     overviewTitle: "Oral Medicine & Radiology",
     overviewContent: "Oral Medicine & Radiology is a specialty that focuses on the diagnosis and non-surgical management of oral and maxillofacial diseases, along with advanced dental imaging and radiographic interpretation and mostly includes diagnosis, case evaluation, treatment planning, and the medical aspects of dentistry.<br><br>The radiology component includes interpretation of advanced imaging such as CBCT and other maxillofacial imaging techniques, which are becoming increasingly important in modern dental practice.",
     middleBanner: {
@@ -914,7 +914,7 @@ export const specialtiesData: Record<string, SpecialtyData> = {
     metaDescription: "Learn about Oral & Maxillofacial Pathology MDS specialization, academic scope, and global licensing pathways.",
     bannerTitle: "MDS Admissions & Counselling",
     bannerDescription: "Transform your dental career. Get expert, transparent guidance for NEET MDS counselling and secure admissions in top-tier dental colleges.",
-    bannerImage: "/mds/Oral Pathology.jpg",
+    bannerImage: "/mds/oral-pathology.jpg",
     overviewTitle: "Oral Pathology",
     overviewContent: "Oral Pathology is a specialty focused on the diagnosis and study of diseases affecting the oral and maxillofacial region at the microscopic and cellular level. It plays a crucial role in identifying oral lesions, cysts, tumors, potentially malignant disorders, and various oral diseases.<br><br>The specialty combines pathology, microbiology, laboratory diagnostics, and research, making it a good option for candidates who enjoy analytical thinking and diagnostic sciences more than extensive clinical procedures.",
     middleBanner: {
@@ -1015,7 +1015,7 @@ export const specialtiesData: Record<string, SpecialtyData> = {
     metaDescription: "Learn about Public Health Dentistry MDS specialization, community outreach programs, and global licensing pathways.",
     bannerTitle: "MDS Admissions & Counselling",
     bannerDescription: "Transform your dental career. Get expert, transparent guidance for NEET MDS counselling and secure admissions in top-tier dental colleges.",
-    bannerImage: "/mds/Public Health Dentistry.jpg",
+    bannerImage: "/mds/public-health-dentistry.jpg",
     overviewTitle: "Public Health Dentistry",
     overviewContent: "Public Health Dentistry is a specialty that focuses on improving oral health at the community and population level rather than treating individual patients alone. The branch deals with oral health promotion, disease prevention, epidemiology, public health programs, research, and healthcare planning.<br><br>It involves academics, research, public health initiatives, healthcare administration, and policy-making. It provides a broader perspective on dentistry by focusing on community needs, preventive strategies, and large-scale oral health programs.",
     middleBanner: {
