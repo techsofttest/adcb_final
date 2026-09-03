@@ -104,7 +104,7 @@ export default function Navbar() {
             {/* Left: Mobile Hamburger */}
             <div className={`flex md:flex-1 md:justify-start md:order-1 ${isCourseInnerPage ? "order-3" : "flex-1 order-1 justify-start"}`}>
               <button
-                className="group flex items-center justify-center gap-x-3 rounded-full transition-colors h-16"
+                className="group flex items-center justify-center gap-x-3 rounded-full transition-colors h-16 cursor-pointer"
                 onClick={() => setMobileOpen(!mobileOpen)}
                 aria-label="Toggle menu"
               >
