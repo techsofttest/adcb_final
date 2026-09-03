@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const BACKEND = process.env.ADCB_API_URL ?? "http://127.0.0.1:8000";
+const raw =
+  process.env.NEXT_PUBLIC_API_URL ??
+  "https://admin.adcbind.com/api";
+
+const BACKEND = raw.replace(/\/api\/?$/, "");
 
 async function proxy(req: NextRequest, params: { slug: string[] }) {
   const path = params.slug.join("/");

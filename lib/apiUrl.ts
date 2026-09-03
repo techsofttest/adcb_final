@@ -1,6 +1,7 @@
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_ADCB_API_URL ??
-  process.env.ADCB_API_URL ??
-  "http://127.0.0.1:8000";
+const raw =
+  process.env.NEXT_PUBLIC_API_URL ??
+  "https://admin.adcbind.com/api";
+
+const API_BASE_URL = raw.replace(/\/api\/?$/, "");
 
 export default API_BASE_URL;

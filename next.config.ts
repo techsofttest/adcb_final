@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "admin.adcbind.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "adcb.janamithrasociety.com",
         pathname: "/**",
       },
