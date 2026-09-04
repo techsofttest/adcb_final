@@ -81,9 +81,9 @@ export default function Footer() {
           <Image
             src="/logo/logo-white.png"
             alt="ADCB Consultancy Logo"
-            width={55}
-            height={50}
-            className="h-[50px] w-auto object-contain transition-opacity duration-300 hover:opacity-80"
+            width={70}
+            height={70}
+            className="h-[70px] w-auto object-contain transition-opacity duration-300 hover:opacity-80"
             priority
           />
         </Link>
