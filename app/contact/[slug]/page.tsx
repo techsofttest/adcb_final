@@ -27,7 +27,7 @@ const branchData: Record<string, BranchDetailsData> = {
     phone: "6282700600",
     email: "adcbedtech@gmail.com",
     hours: "Mon to Sat: 9:30AM - 6:30PM",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.688195860361!2d76.28189871479361!3d9.972322392870026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d3886f6a735%3A0xe54e6fa189c4ad3!2sMG%20Road%2C%20Kochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1658428800000!5m2!1sen!2sin"
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4875.974395956055!2d76.3135180758632!3d9.981159573356994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d235c28e0b7%3A0xb9e9e3ee4e913ea7!2sADCB%20EDTECH%20PVT%20LTD!5e1!3m2!1sen!2sin!4v1788503170222!5m2!1sen!2sin"
   },
   calicut: {
     city: "Calicut",
@@ -113,6 +113,7 @@ export default async function BranchContactPage({ params }: { params: Promise<{ 
   const branch = {
     ...localBranch,
     ...(apiBranch ?? {}),
+    mapEmbedUrl: localBranch.mapEmbedUrl,
   };
 
   const faqs = await getBranchFaqs(branch.city);
