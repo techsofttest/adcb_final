@@ -97,13 +97,14 @@ export default function BranchForm({ branch }: BranchFormProps) {
                     Phone Number
                   </label>
                   <input
-                    type="tel"
+                    type="number"
                     id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#181818] border border-zinc-600 text-white text-sm focus:outline-none focus:border-white transition-colors rounded-sm placeholder-zinc-600"
-                    placeholder="+91 98765 43210"
+                    minLength={10}
+                    className="w-full px-4 py-3 bg-[#181818] border border-zinc-600 text-white text-sm focus:outline-none focus:border-white transition-colors rounded-sm placeholder-zinc-600 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    placeholder="9876543210"
                     required
                   />
                 </div>

@@ -41,6 +41,7 @@ function TextField({
   placeholder,
   required = true,
   hint,
+  type = "text",
 }: {
   name: string;
   label: string;
@@ -49,6 +50,7 @@ function TextField({
   placeholder?: string;
   required?: boolean;
   hint?: string;
+  type?: string;
 }) {
   return (
     <div className="text-left">
@@ -56,14 +58,14 @@ function TextField({
         {label} {required && <span className="text-[#ED1C24]">*</span>}
       </label>
       <input
-        type="text"
+        type={type}
         id={name}
         name={name}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
         required={required}
-        className="w-full px-4 py-3 bg-[#181818] border border-zinc-600 text-white text-sm focus:outline-none focus:border-white transition-colors rounded-sm placeholder-zinc-600 text-left"
+        className="w-full px-4 py-3 bg-[#181818] border border-zinc-600 text-white text-sm focus:outline-none focus:border-white transition-colors rounded-sm placeholder-zinc-600 text-left [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
       />
       {hint && <p className="text-[11px] text-white/40 mt-1 text-left">{hint}</p>}
     </div>
@@ -166,7 +168,7 @@ export default function ConsultationModal({ isOpen, onClose, initialCourse = "MB
   const contactSection = (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
       <TextField name="candidateName" label="Candidate Name" value={formData.candidateName ?? ""} onChange={handleChange} placeholder="Full name" />
-      <TextField name="contactNumber" label="Contact Number" value={formData.contactNumber ?? ""} onChange={handleChange} placeholder="Phone number" />
+      <TextField name="contactNumber" label="Contact Number" value={formData.contactNumber ?? ""} onChange={handleChange} placeholder="Phone number" type="number" />
       <SelectField name="branch" label="Branch" value={formData.branch ?? ""} onChange={handleChange} options={["Kochi", "Calicut"]} placeholder="Select branch" />
       <TextField name="locationCity" label="Location/City" value={formData.locationCity ?? ""} onChange={handleChange} placeholder="City, State" />
     </div>
@@ -195,9 +197,9 @@ export default function ConsultationModal({ isOpen, onClose, initialCourse = "MB
 
   const academicFieldsCommon = (
     <>
-      <TextField name="neetScore" label="NEET Score" value={formData.neetScore ?? ""} onChange={handleChange} placeholder="Your NEET score" />
-      <TextField name="airRank" label="All India Rank (AIR)" value={formData.airRank ?? ""} onChange={handleChange} placeholder="Your AIR" />
-      <TextField name="stateMedicalRank" label="State Medical Rank" value={formData.stateMedicalRank ?? ""} onChange={handleChange} placeholder="If applicable" required={false} hint="Ask only if Kerala rank comes" />
+      <TextField name="neetScore" label="NEET Score" value={formData.neetScore ?? ""} onChange={handleChange} placeholder="Your NEET score" type="number" />
+      <TextField name="airRank" label="All India Rank (AIR)" value={formData.airRank ?? ""} onChange={handleChange} placeholder="Your AIR" type="number" />
+      <TextField name="stateMedicalRank" label="State Medical Rank" value={formData.stateMedicalRank ?? ""} onChange={handleChange} placeholder="If applicable" required={false} hint="Ask only if Kerala rank comes" type="number" />
     </>
   );
 
@@ -308,7 +310,7 @@ export default function ConsultationModal({ isOpen, onClose, initialCourse = "MB
                       <TextField name="preferredBranch" label="Preferred Branch" value={formData.preferredBranch ?? ""} onChange={handleChange} placeholder="e.g. General Medicine, Orthopaedics" />
                       <TextField name="preferredState" label="Preferred State" value={formData.preferredState ?? ""} onChange={handleChange} placeholder="e.g. Kerala, Karnataka" />
                       <SelectField name="collegePreferred" label="College Preferred (With Bond / Without Bond)" value={formData.collegePreferred ?? ""} onChange={handleChange} options={bondOptions} placeholder="Select preference" />
-                      <TextField name="stipendExpectation" label="Stipend Expectation" value={formData.stipendExpectation ?? ""} onChange={handleChange} placeholder="e.g. ₹60,000/month" />
+                      <TextField name="stipendExpectation" label="Stipend Expectation" value={formData.stipendExpectation ?? ""} onChange={handleChange} placeholder="e.g. 60000" type="number" />
                       <TextField name="budget" label="Budget (Max/Min)" value={formData.budget ?? ""} onChange={handleChange} placeholder="e.g. ₹20-40 Lakhs" />
                       <SelectField name="neetExamStatus" label="Regarding NEET exam" value={formData.neetExamStatus ?? ""} onChange={handleChange} options={neetExamOptions} placeholder="Select status" />
                     </div>
